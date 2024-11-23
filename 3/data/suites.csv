@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1094","test_hotel_list","test","Sat Nov 23 13:07:59 GMT 2024","passed","Sat Nov 23 13:08:00 GMT 2024","TestHootel","test_hootel","",""
