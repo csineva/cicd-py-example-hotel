@@ -5,14 +5,19 @@ from selenium.webdriver.common.by import By
 import allure
 import pytest
 
+# 2 passed in 21.56s - headless
+# 2 passed in 27.00s
 
 class TestHootel(object):
     def setup_method(self):
         URL = 'http://hotel-v3.progmasters.hu/'
         options = Options()
         options.add_experimental_option("detach", True)
+        options.add_argument('--headless')
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
+        self.browser.set_window_size(1050, 800, "current")
+        # self.browser.maximize_window()
 
     def teardown_method(self):
         self.browser.quit()
@@ -22,6 +27,7 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login(self):
+        print(self.browser.get_window_size("current"))
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
