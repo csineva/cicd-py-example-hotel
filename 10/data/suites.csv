@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"A belépés tesztelése","1544","Hootel Login","test","Sat Nov 23 14:20:37 GMT 2024","failed","Sat Nov 23 14:20:38 GMT 2024","TestHootel","test_hootel","",""
+"","1092","test_hotel_list","test","Sat Nov 23 14:20:40 GMT 2024","passed","Sat Nov 23 14:20:41 GMT 2024","TestHootel","test_hootel","",""
