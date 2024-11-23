@@ -28,6 +28,7 @@ class TestHootel(object):
     @allure.tag("login")
     def test_login(self):
         print(self.browser.get_window_size("current"))
+        allure.dynamic.description(self.browser.get_window_size("current"))
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
