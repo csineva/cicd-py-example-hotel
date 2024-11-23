@@ -64,11 +64,12 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-    - name: Run the action
-      uses: guibranco/github-status-action-v2@main
-      with:
-        authToken: ${{ secrets.GITHUB_TOKEN }}
-        context: 'Test run'
-        description: 'Passed'
-        state: 'success'
-        sha: ${{github.event.pull_request.head.sha || github.sha}}
+# not works: Possible issues could be that the token used does not have access to the repository containing the commit or the commit/repository does not exist.
+#    - name: Run the action
+#      uses: guibranco/github-status-action-v2@main
+#      with:
+#        authToken: ${{ secrets.GITHUB_TOKEN }}
+#        context: 'Test run'
+#        description: 'Passed'
+#        state: 'success'
+#        sha: ${{github.event.pull_request.head.sha || github.sha}}
