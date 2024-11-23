@@ -44,7 +44,7 @@ class TestHootel(object):
 
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
-        assert logout_btn.text == "Kilépéssss"
+        assert logout_btn.text == "Kilépés"
 
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
