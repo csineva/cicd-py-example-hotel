@@ -6,6 +6,7 @@ import allure
 import pytest
 
 email = 'hiwasi1765@wisnick.com'
+password = 'tesztelek2021'
 
 class TestHootel(object):
     def setup_method(self):
@@ -35,7 +36,7 @@ class TestHootel(object):
         email_input.send_keys(email)
 
         password_input = self.browser.find_element(By.ID, 'password')
-        password_input.send_keys('tesztelek2021')
+        password_input.send_keys(password)
 
         submit_btn = self.browser.find_element(By.NAME, 'submit')
         submit_btn.click()
@@ -44,7 +45,7 @@ class TestHootel(object):
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
         assert logout_btn.text == "Kilépés"
-        allure.dynamic.description(f"Böngésző ablak adatok: {self.browser.get_window_rect()}\nTestdata:{email}")
+        allure.dynamic.description(f"Testdata:\nE-mail: {email}, \npassword: {password}")
 
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
