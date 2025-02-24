@@ -44,8 +44,7 @@ class TestHootel(object):
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
         assert logout_btn.text == "Kilépés"
-        allure.dynamic.description(f"Böngésző ablak adatok: {self.browser.get_window_rect()}")
-        allure.dynamic.description(f"Testdata:{email}")
+        allure.dynamic.description(f"Böngésző ablak adatok: {self.browser.get_window_rect()}\nTestdata:{email}")
 
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
