@@ -11,7 +11,7 @@ class TestHootel(object):
         URL = 'http://hotel-v3.progmasters.hu/'
         options = Options()
         options.add_argument("--headless")
-        options.add_argument('window-size=1920x1080')
+        options.add_argument('window-size=1920,1080')
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
         print(self.browser.get_window_rect())
