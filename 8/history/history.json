@@ -1,1 +1,0 @@
-{"bb30787e1ef9b38e9d42cf150c907234":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"d9783544561953f6","reportUrl":"https://csineva.github.io/cicd-py-example-hotel/8//#testresult/d9783544561953f6","status":"passed","time":{"start":1740417796397,"stop":1740417797481,"duration":1084}}]}}
