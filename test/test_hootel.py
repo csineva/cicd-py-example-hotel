@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 import allure
 import pytest
 
+email = 'hiwasi1765@wisnick.com'
 
 class TestHootel(object):
     def setup_method(self):
@@ -31,7 +32,7 @@ class TestHootel(object):
         login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
-        email_input.send_keys('hiwasi1765@wisnick.com')
+        email_input.send_keys(email)
 
         password_input = self.browser.find_element(By.ID, 'password')
         password_input.send_keys('tesztelek2021')
@@ -43,7 +44,8 @@ class TestHootel(object):
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
         assert logout_btn.text == "Kilépés"
-        # allure.dynamic.description(self.browser.get_window_rect())
+        allure.dynamic.description(f"Böngésző ablak adatok: {self.browser.get_window_rect()}")
+        allure.dynamic.description(f"Testdata:{email}")
 
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
