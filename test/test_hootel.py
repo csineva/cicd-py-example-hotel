@@ -54,6 +54,7 @@ class TestHootel(object):
         self.browser.set_window_size(991, 600)
         login_burgermenu = self.browser.find_element(By.XPATH, '//span[@class="navbar-toggler-icon"]')
         login_burgermenu.click()
+        time.sleep(2)
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
