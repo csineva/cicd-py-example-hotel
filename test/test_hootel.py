@@ -14,7 +14,8 @@ class TestHootel(object):
         # options.add_argument('window-position=0,-1000')
         options.add_argument("--headless")
         self.browser = webdriver.Chrome(options=options)
-        self.browser.maximize_window()
+        # self.browser.maximize_window()
+        self.browser.set_window_size(992, 600)
         print(self.browser.get_window_size())
 
         self.browser.get(URL)
