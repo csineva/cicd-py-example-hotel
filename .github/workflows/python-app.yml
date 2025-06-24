@@ -4,42 +4,42 @@
 name: Python application
 
 on:
-  push:
+  push:  # trigger: minden push a repóba (minden push esetén lehut a folyamat)
     branches: [ "master" ]
 #  pull_request:
 #    branches: [ "master" ]
 
 permissions:
-  contents: write
+  contents: write  # írási jog szükséges az allure jelenés deployhoz
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # legfissebb ubuntu linux oprendszer telepítése
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4  # átmásolja a repót a konténerbe és átjelentkezik ("át checkoutol")
     - name: Set up Python 3.12
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v3  # python telepítése az ubuntu alá
       with:
         python-version: "3.12"
-    - name: Install dependencies
+    - name: Install dependencies  # függőségek telepítése
       run: |
-        python -m pip install --upgrade pip
+        python -m pip install --upgrade pip  
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
+    - name: Lint with flake8  # linter: automata kódellenőrző és elemző
+      run: | 
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Fun with Linux
+    - name: Fun with Linux  # a run blokk egy linux terminál tulajdonképpen, bármilyen linux parancs futtatható
       run: |
         ls -lha
         cat requirements.txt
 
-    - name: Test with pytest
+    - name: Test with pytest  # tesztesetek futtatása, allure-results mappába mentés
       run: |
         pytest --alluredir=allure-results
         ls -lha
@@ -51,6 +51,7 @@ jobs:
         allure_results: allure-results
         allure_history: allure-history
         keep_reports: 20
+
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2

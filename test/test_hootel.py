@@ -25,7 +25,7 @@ class TestHootel(object):
 
     @allure.title("Hootel Login")
     @allure.description("A belépés tesztelése")
-    @allure.severity(allure.severity_level.TRIVIAL)
+    @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("login")
     def test_login_with_992px_window(self):
         self.browser.set_window_size(992, 600)
