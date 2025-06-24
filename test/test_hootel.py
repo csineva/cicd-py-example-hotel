@@ -15,7 +15,7 @@ class TestHootel(object):
         options.add_argument("--headless")
         self.browser = webdriver.Chrome(options=options)
         # self.browser.maximize_window()
-        self.browser.set_window_size(992, 600)
+        # self.browser.set_window_size(992, 600)
         print(self.browser.get_window_size())
 
         self.browser.get(URL)
@@ -28,6 +28,7 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login_with_992px_window(self):
+        self.browser.set_window_size(992, 600)
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
@@ -50,6 +51,7 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login_with_991px_window(self):
+        self.browser.set_window_size(991, 600)
         login_burgermenu = self.browser.find_element(By.XPATH, '//span[@class="navbar-toggler-icon"]')
         login_burgermenu.click()
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
