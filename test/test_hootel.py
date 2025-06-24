@@ -27,7 +27,31 @@ class TestHootel(object):
     @allure.description("A belépés tesztelése")
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
-    def test_login(self):
+    def test_login_with_992px_window(self):
+        login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
+        login_btn.click()
+
+        email_input = self.browser.find_element(By.ID, 'email')
+        email_input.send_keys('hiwasi1765@wisnick.com')
+
+        password_input = self.browser.find_element(By.ID, 'password')
+        password_input.send_keys('tesztelek2021')
+
+        submit_btn = self.browser.find_element(By.NAME, 'submit')
+        submit_btn.click()
+        time.sleep(1)
+
+        logout_btn = self.browser.find_element(By.ID, 'logout-link')
+
+        assert logout_btn.text == "Kilépés"
+
+    @allure.title("Hootel Login")
+    @allure.description("A belépés tesztelése")
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @allure.tag("login")
+    def test_login_with_991px_window(self):
+        login_burgermenu = self.browser.find_element(By.XPATH, '//span[@class="navbar-toggler-icon"]')
+        login_burgermenu.click()
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
