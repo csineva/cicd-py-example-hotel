@@ -31,15 +31,17 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login(self):
+        mail = 'hiwasi1765@wisnick.com'
+        password = 'tesztelek2021'
         # login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable((By.XPATH, '//a[@class="nav-link"]')))
         login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
-        email_input.send_keys('hiwasi1765@wisnick.com')
+        email_input.send_keys(mail)
 
         password_input = self.browser.find_element(By.ID, 'password')
-        password_input.send_keys('tesztelek2021')
+        password_input.send_keys(password)
 
         submit_btn = self.browser.find_element(By.NAME, 'submit')
         submit_btn.click()
@@ -47,6 +49,7 @@ class TestHootel(object):
 
         # logout_btn = self.browser.find_element(By.ID, 'logout-link')
         logout_btn = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable((By.ID, 'logout-link')))
+        allure.dynamic.description(f"email: {mail}\npassword: {password}")
 
         assert logout_btn.text == "Kilépés"
 
