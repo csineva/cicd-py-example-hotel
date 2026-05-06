@@ -5,10 +5,10 @@ from selenium.webdriver.common.by import By
 import allure
 import pytest
 
+URL = 'http://hotel-v3.progmasters.hu/'
 
 class TestHootel(object):
     def setup_method(self):
-        URL = 'http://hotel-v3.progmasters.hu/'
         options = Options()
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
