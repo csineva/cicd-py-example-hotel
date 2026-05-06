@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"A belépés tesztelése","5476","Hootel Login","test","Wed May 06 16:07:29 UTC 2026","broken","Wed May 06 16:07:34 UTC 2026","TestHootel","test_hootel","",""
+"","1091","test_hotel_list","test","Wed May 06 16:07:36 UTC 2026","passed","Wed May 06 16:07:37 UTC 2026","TestHootel","test_hootel","",""
